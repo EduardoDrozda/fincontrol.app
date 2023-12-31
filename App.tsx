@@ -9,8 +9,8 @@ import { ThemeProvider } from "styled-components/native";
 
 import theme from "./src/theme";
 
-import "react-native-gesture-handler";
 import { Loading } from "@shared/components";
+import { Routes } from "./src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,8 +25,7 @@ export default function App() {
         backgroundColor="transparent"
         translucent
       />
-      {/* {fontsLoaded ? <Routes /> : <Loading />} */}
-      <Loading />
+      {fontsLoaded ? <Routes /> : <Loading />}
     </ThemeProvider>
   );
 }
