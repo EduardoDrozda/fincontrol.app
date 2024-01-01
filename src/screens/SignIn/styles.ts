@@ -38,17 +38,22 @@ export const SubTitle = styled.Text`
 `;
 
 export const LoginMessage = styled.Text`
-margin-top: 100px;
+  margin-top: 100px;
 
-${({ theme }) => css`
-  color: ${theme.COLORS.white};
-  font-family: ${theme.FONT_FAMILY.regular};
-  font-size: ${theme.FONT_SIZE.medium}px;
-  text-align: center;
-`};
+  ${({ theme }) => css`
+    color: ${theme.COLORS.white};
+    font-family: ${theme.FONT_FAMILY.regular};
+    font-size: ${theme.FONT_SIZE.medium}px;
+    text-align: center;
+  `};
 `;
 
 export const FormContainer = styled.View`
   flex: 1;
   background-color: ${({ theme }) => theme.COLORS.orange};
+`;
+
+export const Form = styled.View`
+  margin-top: -30px;
+  padding: 0 10px;
 `;
