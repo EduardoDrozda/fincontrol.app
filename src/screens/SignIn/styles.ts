@@ -57,3 +57,11 @@ export const Form = styled.View`
   margin-top: -30px;
   padding: 0 10px;
 `;
+
+export const SignInContainer = styled.View`
+  margin-top: 30px;
+  padding: 0 10px;
+
+  justify-content: center;
+  align-items: center;
+`;

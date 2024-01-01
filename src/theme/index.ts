@@ -7,6 +7,7 @@ export default {
     white: "#FFFFFF",
     title: "#363F5F",
     text: "#969CB2",
+    gray: "#C6C6C6",
     background: "#F0F2F5",
   },
   FONT_FAMILY: {

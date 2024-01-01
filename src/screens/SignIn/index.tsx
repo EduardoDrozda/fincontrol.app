@@ -1,4 +1,4 @@
-import { Input } from "@shared/components";
+import { Button, Input } from "@shared/components";
 import * as S from "./styles";
 import LogoSVG from "@assets/logo.svg";
 
@@ -34,6 +34,9 @@ export function SignIn() {
             icon="lock"
           />
         </S.Form>
+        <S.SignInContainer>
+          <Button title="Entrar" variant="primary" disabled />
+        </S.SignInContainer>
       </S.FormContainer>
     </S.Container>
   );
