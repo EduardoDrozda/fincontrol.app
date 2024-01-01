@@ -1,27 +1,47 @@
 import styled, { css } from "styled-components/native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export const Wrapper = styled.View`
+  width: 100%;
+  height: 60px;
+  flex-direction: row;
+  align-items: center;
+
+  border-radius: 10px;
+  margin-bottom: 8px;
+  border-width: 2px;
+
   ${({ theme }) => css`
-    width: 100%;
-    height: 60px;
     background: ${theme.COLORS.white};
-    border-radius: 10px;
-    margin-bottom: 8px;
-    border-width: 2px;
     border-color: ${theme.COLORS.white};
-    flex-direction: row;
-    align-items: center;
   `}
 `;
 
-export const Container = styled.TextInput`
+export const IconContainer = styled.View`
+  width: 40px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Icon = styled(MaterialIcons).attrs(({ theme }) => ({
+  size: 24,
+  color: theme.COLORS.text,
+}))``;
+
+type Props = {
+  hasIcon?: boolean;
+};
+
+export const Container = styled.TextInput<Props>`
   width: 100%;
   height: 100%;
 
-  ${({ theme }) => css`
+  ${({ theme, hasIcon }) => css`
     color: ${theme.COLORS.title};
     font-family: ${theme.FONT_FAMILY.regular};
     font-size: ${theme.FONT_SIZE.small}px;
-    padding-left: 10px;
+
+    ${!hasIcon && `padding-left: 20px;`}
   `}
 `;

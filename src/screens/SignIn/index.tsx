@@ -22,6 +22,7 @@ export function SignIn() {
             autoCorrect={false}
             returnKeyLabel="Done"
             returnKeyType="done"
+            icon="email"
           />
           <Input
             placeholder="Senha"
@@ -30,6 +31,7 @@ export function SignIn() {
             returnKeyLabel="Done"
             returnKeyType="done"
             secureTextEntry
+            icon="lock"
           />
         </S.Form>
       </S.FormContainer>

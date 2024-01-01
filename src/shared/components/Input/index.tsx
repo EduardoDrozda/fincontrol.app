@@ -1,11 +1,24 @@
 import { TextInputProps } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import * as S from "./styles";
+import { useTheme } from "styled-components";
 
-export function Input({ ...rest }: Readonly<TextInputProps>) {
+type Props = {
+  icon?: keyof typeof MaterialIcons.glyphMap;
+} & TextInputProps;
+
+export function Input({ icon, ...rest }: Readonly<Props>) {
+  const { COLORS } = useTheme();
+
   return (
     <S.Wrapper>
-      <S.Container {...rest} />
+      {icon && (
+        <S.IconContainer>
+          <S.Icon name={icon} size={24} />
+        </S.IconContainer>
+      )}
+      <S.Container {...rest} hasIcon={!!icon} />
     </S.Wrapper>
   );
 }
