@@ -1,5 +1,7 @@
 import {
   Poppins_400Regular,
+  Poppins_500Medium,
+  Poppins_600SemiBold,
   Poppins_700Bold,
   useFonts,
 } from "@expo-google-fonts/poppins";
@@ -15,6 +17,8 @@ import { Routes } from "./src/routes";
 export default function App() {
   const [fontsLoaded] = useFonts({
     Poppins_400Regular,
+    Poppins_500Medium,
+    Poppins_600SemiBold,
     Poppins_700Bold,
   });
 

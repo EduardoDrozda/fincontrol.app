@@ -12,12 +12,13 @@ export default {
   FONT_FAMILY: {
     regular: "Poppins_400Regular",
     medium: "Poppins_500Medium",
+    semi: "Poppins_600SemiBold",
     bold: "Poppins_700Bold",
   },
   FONT_SIZE: {
-    small: "12px",
-    medium: "14px",
-    large: "16px",
-    extraLarge: "18px",
+    small: 16,
+    medium: 18,
+    large: 20,
+    extraLarge: 22,
   },
 };
