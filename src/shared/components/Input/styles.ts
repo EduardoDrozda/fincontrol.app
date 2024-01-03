@@ -8,7 +8,6 @@ export const Wrapper = styled.View`
   align-items: center;
 
   border-radius: 10px;
-  margin-bottom: 8px;
   border-width: 2px;
 
   ${({ theme }) => css`

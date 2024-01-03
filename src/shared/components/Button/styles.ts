@@ -9,10 +9,6 @@ function getButtonVariantColor(
   theme: DefaultTheme,
   disabled?: boolean
 ) {
-  if (disabled) {
-    return theme.COLORS.gray;
-  }
-
   if (variant === "primary") {
     return theme.COLORS.blue;
   }
@@ -38,10 +34,10 @@ type TitleProps = {
   disabled?: boolean;
 };
 
-export const Title = styled.Text<TitleProps>`
+export const Title = styled.Text`
   text-align: center;
   ${({ theme, disabled }) => css`
-    color: ${disabled ? theme.COLORS.title : theme.COLORS.white};
+    color: ${theme.COLORS.white};
     font-family: ${theme.FONT_FAMILY.bold};
     font-size: ${theme.FONT_SIZE.small}px;
   `}

@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components/native";
 
-export const Container = styled.View`
+export const Container = styled.KeyboardAvoidingView`
   flex: 1;
+  background-color: ${({ theme }) => theme.COLORS.blue};
 `;
 
 export const TitleContainer = styled.View`
@@ -12,8 +13,6 @@ export const TitleContainer = styled.View`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  background-color: ${({ theme }) => theme.COLORS.blue};
 `;
 
 export const Title = styled.Text`
@@ -50,18 +49,29 @@ export const LoginMessage = styled.Text`
 
 export const FormContainer = styled.View`
   flex: 1;
-  background-color: ${({ theme }) => theme.COLORS.orange};
+  background-color: ${({ theme }) => theme.COLORS.background};
 `;
 
 export const Form = styled.View`
+  flex: 1;
   margin-top: -30px;
-  padding: 0 10px;
+  padding: 0 30px;
+`;
+
+export const InputContainer = styled.View`
+  width: 100%;
 `;
 
 export const SignInContainer = styled.View`
-  margin-top: 30px;
-  padding: 0 10px;
+  margin-top: 20px;
+  width: 100%;
+`;
 
-  justify-content: center;
-  align-items: center;
+export const ErrorText = styled.Text`
+  margin: 10px 0;
+  ${({ theme }) => css`
+    color: ${theme.COLORS.red};
+    font-family: ${theme.FONT_FAMILY.regular};
+    font-size: ${theme.FONT_SIZE.small}px;
+  `}
 `;

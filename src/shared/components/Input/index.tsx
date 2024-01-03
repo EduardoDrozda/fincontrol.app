@@ -9,8 +9,6 @@ type Props = {
 } & TextInputProps;
 
 export function Input({ icon, ...rest }: Readonly<Props>) {
-  const { COLORS } = useTheme();
-
   return (
     <S.Wrapper>
       {icon && (
