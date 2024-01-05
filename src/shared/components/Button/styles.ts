@@ -21,6 +21,11 @@ export const Button = styled.TouchableOpacity<ButtonProps>`
   padding: 15px;
   border-radius: 10px;
 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
   ${({ theme, variant, disabled }) => css`
     background-color: ${getButtonVariantColor(
       variant ?? "primary",
@@ -30,9 +35,10 @@ export const Button = styled.TouchableOpacity<ButtonProps>`
   `}
 `;
 
-type TitleProps = {
-  disabled?: boolean;
-};
+export const Loading = styled.ActivityIndicator.attrs(({ theme }) => ({
+  color: theme.COLORS.white,
+}))`
+`;
 
 export const Title = styled.Text`
   text-align: center;
