@@ -1,9 +1,13 @@
 import { ISignIn } from "@screens/SignIn/interfaces";
+import { signInService } from "@screens/SignIn/services";
+import { IRequestError } from "@shared/data-access";
+import { AxiosError } from "axios";
 import { ReactNode, createContext, useContext, useMemo, useState } from "react";
+import { Alert } from "react-native";
 
 type PropsSignInContext = {
   isLoading: boolean;
-  handleSignIn: (credentials: ISignIn) => void;
+  handleSignIn: (credentials: ISignIn) => Promise<void>;
 };
 
 const SignInContext = createContext<PropsSignInContext>(
@@ -21,12 +25,16 @@ const DEFAULT_VALUE = {
 const SignInProvider = ({ children }: Props) => {
   const [isLoading, setIsLoading] = useState(DEFAULT_VALUE.isLoading);
 
-  const handleSignIn = (credentials: ISignIn) => {
+  const handleSignIn = async (credentials: ISignIn) => {
     setIsLoading(true);
-    setTimeout(() => {
+    try {
+      const result = await signInService.signIn(credentials);
+    } catch (error: any) {
+      const err = error as AxiosError<IRequestError>;
+      Alert.alert("Credenciais invalidas", err.response?.data.message);
+    } finally {
       setIsLoading(false);
-      console.log('>', credentials);
-    }, 1000);
+    }
   };
 
   const providerValue = useMemo(

@@ -7,15 +7,11 @@ import { ISignIn } from "@screens/SignIn/interfaces";
 
 type Props = {
   isLoading: boolean;
-  handleSignIn: (credentials: ISignIn) => void;
+  handleSignIn: (credentials: ISignIn) => Promise<void>;
 };
 
-export function SignInLayout({ isLoading, handleSignIn }: Props) {
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+export function SignInLayout({ isLoading, handleSignIn }: Readonly<Props>) {
+  const { control, handleSubmit } = useForm({
     defaultValues: {
       email: "",
       password: "",
