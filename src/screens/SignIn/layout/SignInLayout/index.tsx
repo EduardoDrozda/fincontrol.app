@@ -28,7 +28,6 @@ export function SignInLayout({ isLoading, handleSignIn }: Readonly<Props>) {
         <S.SubTitle>
           Controle suas {"\n"} finanças de forma muito simples
         </S.SubTitle>
-        <S.LoginMessage>Faça seu login abaixo</S.LoginMessage>
       </S.TitleContainer>
       <S.FormContainer>
         <S.Form>
@@ -105,6 +104,19 @@ export function SignInLayout({ isLoading, handleSignIn }: Readonly<Props>) {
             />
           </S.SignInContainer>
         </S.Form>
+        <S.ForgotPasswordContainer>
+          <S.ForgotPasswordButton>
+            <S.ForgotPasswordText>Esqueceu a senha?</S.ForgotPasswordText>
+          </S.ForgotPasswordButton>
+        </S.ForgotPasswordContainer>
+        <S.SignUpContainer>
+          <S.SignUpButton>
+            <S.SignUpText>
+              Não Possui cadastro?
+              <S.SignUpBoldText> Cadastre-se</S.SignUpBoldText>
+            </S.SignUpText>
+          </S.SignUpButton>
+        </S.SignUpContainer>
       </S.FormContainer>
     </S.Container>
   );
