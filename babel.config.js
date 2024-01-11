@@ -11,6 +11,7 @@ module.exports = function (api) {
             "@assets": "./src/assets",
             "@screens": "./src/screens",
             "@shared": "./src/shared",
+            "@routes": "./src/routes"
           },
         },
       ],

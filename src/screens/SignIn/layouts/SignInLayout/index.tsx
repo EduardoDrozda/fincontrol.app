@@ -8,9 +8,10 @@ import { ISignIn } from "@screens/SignIn/interfaces";
 type Props = {
   isLoading: boolean;
   handleSignIn: (credentials: ISignIn) => Promise<void>;
+  handleSignUp: () => void;
 };
 
-export function SignInLayout({ isLoading, handleSignIn }: Readonly<Props>) {
+export function SignInLayout({ isLoading, handleSignIn, handleSignUp }: Readonly<Props>) {
   const { control, handleSubmit } = useForm({
     defaultValues: {
       email: "",
@@ -111,7 +112,7 @@ export function SignInLayout({ isLoading, handleSignIn }: Readonly<Props>) {
         </S.ForgotPasswordContainer>
         <S.SignUpContainer>
           <S.SignUpButton>
-            <S.SignUpText>
+            <S.SignUpText onPress={handleSignUp}>
               Não Possui cadastro?
               <S.SignUpBoldText> Cadastre-se</S.SignUpBoldText>
             </S.SignUpText>
